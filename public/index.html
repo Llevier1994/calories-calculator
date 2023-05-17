@@ -6,7 +6,10 @@
     <title>Calorie Tracker</title>
     <!-- Include your CSS stylesheets and fonts here -->
     <link rel="stylesheet" href="app.css" />
-    
+    <link
+      href="https://fonts.googleapis.com/css?family=YourFont"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -18,6 +21,7 @@
         <ul>
           <li><a href="/" id="home-tab">Home</a></li>
           <li><a href="#add" id="add-meal-tab">Add Meal</a></li>
+          <li><a href="#history" id="view-history-tab">View History</a></li>
         </ul>
       </nav>
     </header>
@@ -32,6 +36,41 @@
       <!-- Home section -->
       <section id="home-section">
         <h2>Welcome to the Calorie Tracker!</h2>
+        <p>
+          Are you looking to improve your health and fitness? Do you want to
+          maintain a healthy weight or lose a few pounds? If so, you've come to
+          the right place.
+        </p>
+        <p>
+          With our calorie tracker, you can easily keep track of your daily
+          calorie intake and calories burned. We'll help you set realistic
+          goals, and provide you with the tools and support you need to achieve
+          them.
+        </p>
+        <p>
+          Our user-friendly interface makes it easy to log your meals and track
+          your progress. Whether you're at home or on the go, you can access
+          your account from any device and stay on top of your health and
+          fitness goals.
+        </p>
+        <p>
+          Join our community of like-minded individuals who are committed to
+          living a healthy lifestyle. Let us help you reach your full potential
+          and become the best version of yourself!
+        </p>
+
+        <div class="stat-cards">
+          <div class="stat-card">
+            <h3>Total Meals</h3>
+            <p class="stat-value">15</p>
+          </div>
+          <div class="stat-card">
+            <h3>Total Calories Intake</h3>
+            <p class="stat-value">2500</p>
+          </div>
+          <div class="stat-card">
+            <h3>Total Calories Burned</h3>
+            <p class="stat-value">600</p>
           </div>
         </div>
       </section>
@@ -228,7 +267,15 @@
       </section>
     </main>
 
+    <footer>
+      <!-- Footer content -->
+      <p>&copy; 2023 Calorie Tracker. All rights reserved.</p>
+    </footer>
+
     <!-- Include your JavaScript file here -->
     <script src="app.js"></script>
+    <!-- <script src="app.js"></script>
+    <script src="nav.js"></script>
+    <script src="modal.js"></script> -->
   </body>
 </html>
