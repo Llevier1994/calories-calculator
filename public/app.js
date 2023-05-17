@@ -239,6 +239,7 @@ function populateTable() {
     fetch('/api/calories')
         .then(response => response.json())
         .then(data => {
+            console.log("calories data", data);
             // Get the history table element
             const table = document.querySelector('#history-table tbody');
 
