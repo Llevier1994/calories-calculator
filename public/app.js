@@ -42,14 +42,14 @@ function populateFormFields(mealData) {
         lunch,
         snack,
         dinner,
-        burned
+        // burned
     } = mealData;
 
     document.getElementById('update-breakfast').value = breakfast;
     document.getElementById('update-lunch').value = lunch;
     document.getElementById('update-snack').value = snack;
     document.getElementById('update-dinner').value = dinner;
-    document.getElementById('update-burned').value = burned;
+    // document.getElementById('update-burned').value = burned;
 }
 
 // Event listener for update button click
@@ -66,7 +66,7 @@ document.addEventListener('click', (e) => {
             lunch: row.cells[3].textContent,
             snack: row.cells[4].textContent,
             dinner: row.cells[5].textContent,
-            burned: row.cells[6].textContent
+            // burned: row.cells[6].textContent
         };
 
         console.log(mealData);
@@ -91,7 +91,7 @@ updateForm.addEventListener('submit', (e) => {
         lunch: document.getElementById('update-lunch').value,
         snack: document.getElementById('update-snack').value,
         dinner: document.getElementById('update-dinner').value,
-        calories: document.getElementById('update-burned').value
+        // calories: document.getElementById('update-burned').value
     };
 
     // TODO: Send updated meal details to the server to update the database
@@ -185,10 +185,10 @@ document.getElementById('add-meal-form').addEventListener('submit', function (ev
     const snack = parseInt(document.getElementById('snack').value);
     const dinner = parseInt(document.getElementById('dinner').value);
     const date = document.getElementById('date').value;
-    const caloriesBurned = parseInt(document.getElementById('calories-burned').value);
+    // const caloriesBurned = parseInt(document.getElementById('calories-burned').value);
 
     // Perform calculations
-    const totalCalories = breakfast + lunch + snack + dinner - caloriesBurned;
+    const totalCalories = breakfast + lunch + snack + dinner;
     const netCalories = document.getElementById('net-calories');
 
     netCalories.style.display = 'block';
@@ -202,7 +202,7 @@ document.getElementById('add-meal-form').addEventListener('submit', function (ev
         lunch: lunch,
         snack: snack,
         dinner: dinner,
-        calories: caloriesBurned,
+        // calories: caloriesBurned,
         totalCalories: totalCalories,
         date: new Date(date),
     };
@@ -256,8 +256,7 @@ function populateTable() {
         <td>${entry.lunch}</td>
         <td>${entry.snack}</td>
         <td>${entry.dinner}</td>
-        <td>${entry.calories}</td>
-        <td>${entry.breakfast + entry.lunch + entry.snack + entry.dinner - entry.calories}</td>
+        <td>${entry.breakfast + entry.lunch + entry.snack + entry.dinner}</td>
         <td>
           <button class="btn-update" data-id="${entry.id}">Update</button>
           <button class="btn-delete" data-id="${entry.id}">Delete</button>
@@ -276,7 +275,6 @@ function populateTable() {
       <td>${calculateTotal(data, 'lunch')}</td>
       <td>${calculateTotal(data, 'snack')}</td>
       <td>${calculateTotal(data, 'dinner')}</td>
-      <td>${calculateTotal(data, 'calories')}</td>
       <td>${calculateOverallTotal(data)}</td>
       <td></td>
     `;
@@ -297,7 +295,7 @@ function calculateTotal(data, mealType) {
 
 // Helper function to calculate the overall total (calories - burned)
 function calculateOverallTotal(data) {
-    return data.reduce((total, entry) => total + entry.breakfast + entry.lunch + entry.snack + entry.dinner - entry.calories, 0);
+    return data.reduce((total, entry) => total + entry.breakfast + entry.lunch + entry.snack + entry.dinner, 0);
 }
 
 // Event listener for update button click

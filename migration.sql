@@ -7,5 +7,5 @@ CREATE TABLE calories(
    lunch INTEGER,
    snack INTEGER,
    dinner INTEGER,
-   calories_burned INTEGER
+   
 );

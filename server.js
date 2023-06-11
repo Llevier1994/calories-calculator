@@ -44,19 +44,18 @@ app.get("/api/calories/:id", (req, res) =>{
 });
 
 app.post("/api/calories", (req, res) => {
-  const {date, breakfast, lunch, snack, dinner, calories_burned} = req.body;
+  const {date, breakfast, lunch, snack, dinner} = req.body;
   if (isNaN(Date.parse(date))|| 
   Number.isNaN(breakfast) || 
   Number.isNaN(lunch) || 
   Number.isNaN(snack)|| 
-  Number.isNaN(dinner) || 
-  Number.isNaN(calories_burned)){
+  Number.isNaN(dinner)){
       res.sendStatus(422);
       return;
   }
 
-db.query("INSERT INTO calories (date, breakfast, lunch, snack, dinner, calories_burned) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", 
-[date, breakfast, lunch, snack, dinner, calories_burned]
+db.query("INSERT INTO calories (date, breakfast, lunch, snack, dinner) VALUES ($1, $2, $3, $4, $5) RETURNING *", 
+[date, breakfast, lunch, snack, dinner ]
 ).then(result => {
     res.status(201).send(result.rows[0]);
   });
@@ -79,21 +78,20 @@ app.delete("/api/calories/:id", (req, res) =>{
 
 app.patch("/api/calories/:id", (req, res) => {
     const id = Number(req.params.id);
-    const {date, breakfast, lunch, snack, dinner, calories_burned} = req.body;
-    if ((!date && !breakfast && !lunch && !snack && !dinner && !calories_burned) ||
+    const {date, breakfast, lunch, snack, dinner} = req.body;
+    if ((!date && !breakfast && !lunch && !snack && !dinner) ||
    (Number.isNaN(Date.parse(date))|| 
     Number.isNaN(breakfast)|| 
     Number.isNaN(lunch) || 
     Number.isNaN(snack)|| 
-    Number.isNaN(dinner)|| 
-    Number.isNaN(calories_burned))
+    Number.isNaN(dinner))
     ){
       res.sendStatus(422);
         return;
     }
 
-    db.query("UPDATE calories SET date =COALESCE($1, date), breakfast =COALESCE($2, breakfast), lunch =COALESCE($3, lunch), snack =COALESCE($4, snack), dinner =COALESCE($5, dinner), calories_burned =COALESCE($6, calories_burned) WHERE id = $7 RETURNING *", 
-    [date, breakfast, lunch, snack, dinner, calories_burned, id]
+    db.query("UPDATE calories SET date =COALESCE($1, date), breakfast =COALESCE($2, breakfast), lunch =COALESCE($3, lunch), snack =COALESCE($4, snack), dinner =COALESCE($5, dinner) WHERE id = $6 RETURNING *", 
+    [date, breakfast, lunch, snack, dinner, id]
     ).then((result) => {
         if(result.rows.length === 0){
             res.sendStatus(404);
@@ -104,6 +102,6 @@ app.patch("/api/calories/:id", (req, res) => {
 });
 
 // TODO: Replace 3000 with process.env.PORT
-app.listen(3000, () => {
-  console.log(`listening on Port ${3000}`);
+app.listen(4000, () => {
+  console.log(`listening on Port 4000`);
 });
