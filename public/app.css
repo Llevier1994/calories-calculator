@@ -14,8 +14,8 @@ body {
 
 /* Header styles */
 header {
-    background-color: #333333;
-    color: #fff;
+    background-color: #cfc01a;
+    color: #24ea19;
     padding: 20px;
 }
 
@@ -112,19 +112,19 @@ section h2 {
 
 /* Example card colors */
 .stat-card:nth-child(1) {
-    background-color: #FFC107;
+    background-color: #cb0c0c;
     color: #fff;
 }
 
 .stat-card:nth-child(2) {
-    background-color: #4CAF50;
+    background-color: #cb0c0c;
     color: #fff;
 }
 
-.stat-card:nth-child(3) {
-    background-color: #2196F3;
+/* .stat-card:nth-child(3) {
+    background-color: #c79412;
     color: #fff;
-}
+} */
 
 
 
@@ -137,7 +137,7 @@ section h2 {
 
 /* Header styles */
 header {
-    background-color: #333;
+    background-color: #0b0c0c;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -166,22 +166,22 @@ nav a {
     display: inline-block;
     padding: 10px 15px;
     border: none;
-    background-color: #333;
+    background-color: #484845;
     color: #fff;
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #555;
+    background-color: #d5140d;
 }
 
 nav a.active {
-    background-color: #777;
+    background-color: #4c4e4e;
 }
 
 /* Footer styles */
-footer {
+/* footer {
     background-color: #333;
     color: #fff;
     padding: 10px;
@@ -190,7 +190,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-}
+} */
 
 
 /* Add meal section */
@@ -303,7 +303,7 @@ section#add-meal-section button[type="submit"]:hover {
     padding: 5px 10px;
     margin-right: 5px;
     border: none;
-    background-color: #007bff;
+    background-color:  #cb0c0c;;
     color: #fff;
     cursor: pointer;
 }
@@ -311,7 +311,7 @@ section#add-meal-section button[type="submit"]:hover {
 .btn-view:hover,
 .btn-update:hover,
 .btn-delete:hover {
-    background-color: #0056b3;
+    background-color:  #cb0c0c;;
 }
 
 /* Modal styles */
@@ -367,7 +367,7 @@ label {
 }
 
 .modal input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: #131513;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -376,7 +376,7 @@ label {
 }
 
 .modal input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #0d0e0d;
 }
 
 #toast-modal {
@@ -411,7 +411,7 @@ label {
 }
 
 .toast-card.success {
-    background-color: #4caf50;
+    background-color: #5a5d5a;
 }
 
 .toast-card.error {
